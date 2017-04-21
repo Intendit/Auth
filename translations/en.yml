@@ -59,6 +59,9 @@
 "Password Reset Request": "Password Reset Request"
 "Membership address confirmation": "Membership address confirmation"
 
+"Edit Profile": "Edit Profile"
+"Registered Accounts": "Registered Accounts"
+
 "Public Name": "Public Name"
 "The name you would like to display publicly…": "The name you would like to display publicly…"
 "Email Address": "Email Address"
@@ -67,3 +70,6 @@
 "Repeat Password": "Repeat Password"
 "Enter your password…": "Enter your password…"
 "Repeat the above password…": "Repeat the above password…"
+
+"Login": "Login"
+"Save & Continue": "Save & Continue"

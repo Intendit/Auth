@@ -59,6 +59,9 @@
 "Password Reset Request": "Lösenordsåterställning"
 "Membership address confirmation": "Medlemsskapsbekräftelse"
 
+"Edit Profile": "Redigera profil"
+"Registered Accounts": "Registrerade konton"
+
 "Public Name": "Namn"
 "The name you would like to display publicly…": "Ditt Namn…"
 "Email Address": "E-post"
@@ -67,3 +70,6 @@
 "Repeat Password": "Upprepa Lösenord"
 "Enter your password…": "Skriv ditt lösenord…"
 "Repeat the above password…": "Upprepa ditt lösenord…"
+
+"Login": "Logga in"
+"Save & Continue": "Spara och fortsätt"
