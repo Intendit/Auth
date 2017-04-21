@@ -27,28 +27,25 @@
             {% block profile %}
                 {{ form_start(form_profile_edit, {'attr': {'id': 'profile', 'class': 'row'}, 'action': null}) }}
 
-                {{ form_label(form_profile_edit.displayname, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
-                {{ form_errors(form_profile_edit.displayname) }}
-                {{ form_widget(form_profile_edit.displayname, { 'attr': {'class': 'form-control large'} }) }}
-
-                {{ form_label(form_profile_edit.email, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
-                {{ form_errors(form_profile_edit.displayname) }}
-                {{ form_widget(form_profile_edit.email, { 'attr': {'class': 'form-control large'} }) }}
-
+                {% for name, row in form_profile_edit if name not in ['submit', 'password', '_token'] %}
+                    <br>
+                    {{ form_label(row, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
+                    {{ form_errors(row) }}
+                    {{ form_widget(row, { 'attr': {'class': 'form-control large'} }) }}
+                {% endfor %}
+                <br>
                 {{ form_label(form_profile_edit.password.first, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
                 {{ form_errors(form_profile_edit.password.first) }}
-                {{ form_widget(form_profile_edit.password.first, { 'attr': {'class': 'form-control large', 'autocomplete': 'new-password'}, 'required': false }) }}
-
+                {{ form_widget(form_profile_edit.password.first, { 'attr': {'class': 'form-control large'} }) }}
+                <br>
                 {{ form_label(form_profile_edit.password.second, null, {'label_attr': {'class': 'main col-xs-12'}}) }}
                 {{ form_errors(form_profile_edit.password.second) }}
-                {{ form_widget(form_profile_edit.password.second, { 'attr': {'class': 'form-control large', 'autocomplete': 'new-password'}, 'required': false }) }}
+                {{ form_widget(form_profile_edit.password.second, { 'attr': {'class': 'form-control large'} }) }}
 
-                {% include '@MembersAdmin/profile_edit_meta.twig' ignore missing %}
-
-                <br>
-            <div class="hidden">
-                {{ form_row(form_profile_edit.submit) }}
-            </div>
+                <div class="hidden">
+                    {{ form_row(form_profile_edit.submit, {'attr': {'class': 'button btn btn-default'}}) }}
+                    {{ form_row(form_profile_edit._token) }}
+                </div>
                 {{ form_end(form_profile_edit) }}
             {% endblock profile %}
         </div>

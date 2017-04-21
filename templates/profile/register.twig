@@ -27,7 +27,7 @@
             {{ form_start(form_profile_edit) }}
             {{ form_errors(form_profile_edit) }}
             {% for name, row in form_profile_edit if name not in ['submit', 'password'] %}
-                {{ form_row(row) }}
+                <div class="members_{{ row.vars.name }}">{{ form_row(row) }}</div>
             {% endfor %}
             {% if transitional %}
                 {% do form_profile_edit.password.setRendered %}
