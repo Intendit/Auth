@@ -24,25 +24,18 @@
     <div class="row register">
 
         <div class="small-12 columns">
-
             {{ form_start(form_profile_register) }}
-
             {{ form_errors(form_profile_register) }}
-
-            {{ form_row(form_profile_register.displayname, { 'value': member.name|default() } ) }}
-            {{ form_row(form_profile_register.email, { 'value': member.email|default() } ) }}
-
+            {% for name, row in form_profile_register if name not in ['submit', 'password'] %}
+                {{ form_row(row) }}
+            {% endfor %}
             {% if transitional %}
                 {% do form_profile_register.password.setRendered %}
             {% else %}
-                {{ form_widget(form_profile_register.password.first, { 'attr': {'autocomplete': 'new-password'}}) }}
-                {{ form_widget(form_profile_register.password.second, { 'attr': {'autocomplete': 'new-password'}}) }}
+                {{ form_row(form_profile_register.password) }}
             {% endif %}
-
-            {{ form_row(form_profile_register.submit, { 'attr': { 'class': 'button btn btn-default' }}) }}
-
+            {{ form_row(form_profile_register.submit, {'attr': {'class': 'button btn btn-default'}}) }}
             {{ form_end(form_profile_register) }}
-
         </div>
 
     </div>
